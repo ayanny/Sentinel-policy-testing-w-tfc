@@ -10,6 +10,14 @@ variable "secret_key" {
 
 
 
+variable "vpccidr" {
+  description = "Large CIDR used for VPC"
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+
+
 variable "region" {
   description = "AWS region to provision resources"
   type        = string
