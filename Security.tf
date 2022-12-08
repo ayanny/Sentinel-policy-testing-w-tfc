@@ -41,68 +41,68 @@ resource "aws_security_group" "allow_web" {
   }
 }
 
-# resource "aws_security_group" "allow_api" {
-#   name        = "allow_api"
-#   description = "Allow api inbound traffic"
-#   vpc_id      = aws_vpc.sentinel-demo-vpc.id
+resource "aws_security_group" "allow_api" {
+  name        = "allow_api"
+  description = "Allow api inbound traffic"
+  vpc_id      = aws_vpc.sentinel-demo-vpc.id
 
-#   ingress {
-#     description = "api ingress"
-#     from_port   = tonumber(var.apiport)
-#     to_port     = tonumber(var.apiport)
-#     protocol    = "tcp"
-#     cidr_blocks = ["10.0.1.0/24"]
-#   }
+  ingress {
+    description = "api ingress"
+    from_port   = tonumber(var.apiport)
+    to_port     = tonumber(var.apiport)
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
 
-#   egress {
-#     from_port   = 0
-#     to_port     = 0
-#     protocol    = "-1" #ANY
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
-# }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1" #ANY
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
 
-# resource "aws_security_group" "allow_cache" {
-#   name        = "allow_cache"
-#   description = "Allow cache inbound traffic"
-#   vpc_id      = aws_vpc.sentinel-demo-vpc.id
+resource "aws_security_group" "allow_cache" {
+  name        = "allow_cache"
+  description = "Allow cache inbound traffic"
+  vpc_id      = aws_vpc.sentinel-demo-vpc.id
 
-#   ingress {
-#     description = "cache ingress"
-#     from_port   = tonumber(var.cacheport)
-#     to_port     = tonumber(var.cacheport)
-#     protocol    = "tcp"
-#     cidr_blocks = ["10.0.2.0/24"]
-#   }
+  ingress {
+    description = "cache ingress"
+    from_port   = tonumber(var.cacheport)
+    to_port     = tonumber(var.cacheport)
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.2.0/24"]
+  }
 
-#   egress {
-#     from_port   = 0
-#     to_port     = 0
-#     protocol    = "-1" #ANY
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
-# }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1" #ANY
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
 
-# resource "aws_security_group" "allow_payments" {
-#   name        = "allow_payments"
-#   description = "Allow payment inbound traffic"
-#   vpc_id      = aws_vpc.sentinel-demo-vpc.id
+resource "aws_security_group" "allow_payments" {
+  name        = "allow_payments"
+  description = "Allow payment inbound traffic"
+  vpc_id      = aws_vpc.sentinel-demo-vpc.id
 
-#   ingress {
-#     description = "payment ingress"
-#     from_port   = tonumber(var.payport)
-#     to_port     = tonumber(var.payport)
-#     protocol    = "tcp"
-#     cidr_blocks = ["10.0.2.0/24"]
-#   }
+  ingress {
+    description = "payment ingress"
+    from_port   = tonumber(var.payport)
+    to_port     = tonumber(var.payport)
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.2.0/24"]
+  }
 
-#   egress {
-#     from_port   = 0
-#     to_port     = 0
-#     protocol    = "-1" #ANY
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
-# }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1" #ANY
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
 
 resource "aws_security_group" "allow_data" {
   name        = "allow_data"
