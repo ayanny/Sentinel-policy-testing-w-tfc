@@ -95,27 +95,27 @@ variable "dataport" {
   default     = "9494"
 }
 
-# variable "webinstance" {
-#   description = "Instance type to deploy web app with. This is set per workspace in Terraform Cloud."
-#   type        = string
-# }
+variable "webinstance" {
+  description = "Instance type to deploy web app with. This is set per workspace in Terraform Cloud."
+  type        = string
+}
 
-# variable "apiinstance" {
-#   description = "Instance type to deploy api app with. This is set per workspace in Terraform Cloud."
-#   type        = string
-# }
+variable "apiinstance" {
+  description = "Instance type to deploy api app with. This is set per workspace in Terraform Cloud."
+  type        = string
+}
 
-# variable "cacheinstance" {
-#   description = "Instance type to deploy cache app with. This is set per workspace in Terraform Cloud."
-#   type        = string
-# }
+variable "cacheinstance" {
+  description = "Instance type to deploy cache app with. This is set per workspace in Terraform Cloud."
+  type        = string
+}
 
-# variable "payinstance" {
-#   description = "Instance type to deploy payment app with. This is set per workspace in Terraform Cloud."
-#   type        = string
-# }
+variable "payinstance" {
+  description = "Instance type to deploy payment app with. This is set per workspace in Terraform Cloud."
+  type        = string
+}
 
-# variable "datainstance" {
-#   description = "Instance type to deploy data app with. This is set per workspace in Terraform Cloud."
-#   type        = string
-# }
+variable "datainstance" {
+  description = "Instance type to deploy data app with. This is set per workspace in Terraform Cloud."
+  type        = string
+}
