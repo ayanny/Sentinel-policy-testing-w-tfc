@@ -8,12 +8,12 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
-# #Create subnets for workloads and load balancers
-# resource "aws_subnet" "ext" {
-#   vpc_id            = aws_vpc.sentinel-demo-vpc.id
-#   cidr_block        = "10.0.0.0/24"
-#   availability_zone = data.aws_availability_zones.available.names[0]
-# }
+#Create subnets for workloads and load balancers
+resource "aws_subnet" "ext" {
+  vpc_id            = aws_vpc.sentinel-demo-vpc.id
+  cidr_block        = "10.0.0.0/24"
+  availability_zone = data.aws_availability_zones.available.names[0]
+}
 
 resource "aws_subnet" "web" {
   vpc_id            = aws_vpc.sentinel-demo-vpc.id
@@ -21,23 +21,23 @@ resource "aws_subnet" "web" {
   availability_zone = data.aws_availability_zones.available.names[0]
 }
 
-# resource "aws_subnet" "api" {
-#   vpc_id            = aws_vpc.sentinel-demo-vpc.id
-#   cidr_block        = "10.0.2.0/24"
-#   availability_zone = data.aws_availability_zones.available.names[0]
-# }
+resource "aws_subnet" "api" {
+  vpc_id            = aws_vpc.sentinel-demo-vpc.id
+  cidr_block        = "10.0.2.0/24"
+  availability_zone = data.aws_availability_zones.available.names[0]
+}
 
-# resource "aws_subnet" "cache" {
-#   vpc_id            = aws_vpc.sentinel-demo-vpc.id
-#   cidr_block        = "10.0.3.0/24"
-#   availability_zone = data.aws_availability_zones.available.names[0]
-# }
+resource "aws_subnet" "cache" {
+  vpc_id            = aws_vpc.sentinel-demo-vpc.id
+  cidr_block        = "10.0.3.0/24"
+  availability_zone = data.aws_availability_zones.available.names[0]
+}
 
-# resource "aws_subnet" "payments" {
-#   vpc_id            = aws_vpc.sentinel-demo-vpc.id
-#   cidr_block        = "10.0.4.0/24"
-#   availability_zone = data.aws_availability_zones.available.names[0]
-# }
+resource "aws_subnet" "payments" {
+  vpc_id            = aws_vpc.sentinel-demo-vpc.id
+  cidr_block        = "10.0.4.0/24"
+  availability_zone = data.aws_availability_zones.available.names[0]
+}
 
 resource "aws_subnet" "data" {
   vpc_id            = aws_vpc.sentinel-demo-vpc.id
@@ -99,20 +99,20 @@ resource "aws_route_table_association" "routeassociationweb" {
   route_table_id = aws_route_table.natroutetable.id
 }
 
-# resource "aws_route_table_association" "routeassociationapi" {
-#   subnet_id      = aws_subnet.api.id
-#   route_table_id = aws_route_table.natroutetable.id
-# }
+resource "aws_route_table_association" "routeassociationapi" {
+  subnet_id      = aws_subnet.api.id
+  route_table_id = aws_route_table.natroutetable.id
+}
 
-# resource "aws_route_table_association" "routeassociationcache" {
-#   subnet_id      = aws_subnet.cache.id
-#   route_table_id = aws_route_table.natroutetable.id
-# }
+resource "aws_route_table_association" "routeassociationcache" {
+  subnet_id      = aws_subnet.cache.id
+  route_table_id = aws_route_table.natroutetable.id
+}
 
-# resource "aws_route_table_association" "routeassociationpay" {
-#   subnet_id      = aws_subnet.payments.id
-#   route_table_id = aws_route_table.natroutetable.id
-# }
+resource "aws_route_table_association" "routeassociationpay" {
+  subnet_id      = aws_subnet.payments.id
+  route_table_id = aws_route_table.natroutetable.id
+}
 
 resource "aws_route_table_association" "routeassociationdata" {
   subnet_id      = aws_subnet.data.id
