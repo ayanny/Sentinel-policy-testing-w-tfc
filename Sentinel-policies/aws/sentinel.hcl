@@ -17,26 +17,26 @@ module "aws-functions" {
 
 policy "check-ec2-environment-tag" {
   source = "./check-ec2-environment-tag.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "soft-mandatory"
 }
 
 policy "enforce-mandatory-tags" {
   source = "./enforce-mandatory-tags.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "soft-mandatory"
 }
 
 policy "require-most-recent-AMI-version" {
   source = "./require-most-recent-AMI-version.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "soft-mandatory"
 }
 
 policy "restrict-availability-zones" {
   source = "./restrict-availability-zones.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "soft-mandatory"
 }
 
 policy "restrict-ec2-instance-type" {
   source = "./restrict-ec2-instance-type.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "soft-mandatory"
 }
 
