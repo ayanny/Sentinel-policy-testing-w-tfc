@@ -24,10 +24,10 @@ variable "region" {
   default     = "ca-central-1"
 }
 
-variable "environment" {
-  description = "Environment in which to deploy resources. This should correlate to Github branches and is configured in Terraform Cloud"
-  type        = string
-}
+# variable "environment" {
+#   description = "Environment in which to deploy resources. This should correlate to Github branches and is configured in Terraform Cloud"
+#   type        = string
+# }
 
 variable "service" {
   description = "Name of service to be deployed"
