@@ -1,4 +1,4 @@
-#Rainpole-terraform-sentinel-demo
+# Rainpole-terraform-sentinel-demo
 Policy As Code using Terraform
 
 Amir Yanny's Hashicorp - Senior Partner Solution Engineer - Technical Exercise
