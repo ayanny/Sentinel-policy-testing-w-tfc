@@ -102,7 +102,7 @@ Sentinel policies restrict-ec2-instance-enviornment contains two sets of values.
 ### 2- Restrict production changes during peak hours
 Peak hours for Planet Express have been defined as 5am - 8pm EST every day. The Sentinel policy restrict-production-deployment-times checks for any resources being created, updated or deleted that contain a tag of Environment/prod. If this policy detects changes to any production resources during peak hours the policy will fail. This policy is set soft-mandatory and can be overridden in TFC.
 
-#### 3- Provide guaranteed way to audit environments
+### 3- Provide guaranteed way to audit environments
 In order to properly report based on Environment type Rainpole's needs to be able to ensure that all EC2 resources are created with the appropriate tags. The sentinel policy check-ec2-environment-tags-all is an extension of an official Hashicorp Sentinel Example (https://raw.githubusercontent.com/hashicorp/terraform-sentinel-policies/main/aws/check-ec2-environment-tag.sentinel).
 
 This was created out of necessity due to the way that Rainpole creates their EC2 instances. Although the AWS provider default_tags value is set in the provider.tf configuration the way that the provider actually adds tags to these resources is with an attribute of tags_all, rather than tags.
